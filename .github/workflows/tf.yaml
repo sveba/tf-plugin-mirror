@@ -46,6 +46,8 @@ jobs:
         run: |
           git config --local user.email "noreplay+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git lfs install
+          git lfs track ./tf-files/tf-provider.zip* 
           git add ./tf-files/tf-provider.zip*
           git commit -m "Add TF Zip" -a
       - name: Push changes
